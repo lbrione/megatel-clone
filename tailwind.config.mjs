@@ -14,7 +14,8 @@ export default {
 			'yellow': '#ffca2c',
 			'yellow-hover': '#eabb30',
 			'navy-blue': '#0e385e',
-			'navy-blue-200': '#0f3353'
+			'navy-blue-200': '#0f3353',
+			'transparent': 'transparent'
 		}
 	},
 	plugins: [],

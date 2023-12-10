@@ -1,32 +1,38 @@
+---
+import { BASE_URL } from '../services/contans'
+---
+
 <nav class="nav">
-  <input type="checkbox" hidden id="i_checkbox" />
-  <label class="nav__toggle-cta" for="i_checkbox">
+  <input type="checkbox" hidden id="checkbox" />
+  <label class="nav__icon" for="checkbox">
     <i class="fa-solid fa-bars"></i>
   </label>
 
   <div class="nav__overlay">
-    <div class="nav__container">
-      <label class="nav__toggle-cta" for="i_checkbox">
+    <div class="mx-auto w-[85%] relative lg:mx-0 lg:w-full">
+      <label class="nav__icon" for="checkbox">
         <i class="fa-solid fa-xmark"></i>
       </label>
 
-      <ul class="nav__links">
+      <ul
+        class="lg:flex lg:items-center lg:gap-8 lg:h-auto grid h-screen place-content-center gap-7 text-center"
+      >
         <li>
-          <a class="nav__link" href="./index.html">Inicio</a>
+          <a class="nav__link" href=`${BASE_URL}/`>Inicio</a>
         </li>
         <li>
-          <a class="nav__link" href="#plans">Planes</a>
+          <a class="nav__link" href=`${BASE_URL}/`>Planes</a>
         </li>
         <li>
-          <a class="nav__link" href="#">Cobertura</a>
+          <a class="nav__link" href=`${BASE_URL}/`>Cobertura</a>
         </li>
         <li>
-          <a class="nav__link" href="#">Contratar</a>
+          <a class="nav__link" href=`${BASE_URL}/`>Contratar</a>
         </li>
         <li>
-          <a class="nav__link nav__link--cta" href="#">
-            Consultar Factura
-          </a>
+          <a class="nav__link nav__link--cta" href=`${BASE_URL}/`>
+            Consultar Factura</a
+          >
         </li>
       </ul>
     </div>
@@ -34,68 +40,34 @@
 </nav>
 
 <style>
-
-.nav {
-  @apply select-none;
-}
-
-.nav__toggle-cta {
-  @apply lg:hidden grid place-items-center h-10 w-10 border border-cyan-blue/0 rounded-lg text-[28px] hover:border-cyan-blue;
-}
-
-.nav__links {
-  @apply flex items-center justify-center gap-3;
-}
-
-.nav__link {
-  @apply block text-lg py-1 px-3 hover:text-cyan-blue;
-}
-
-.nav__link--cta {
-  @apply inline-block px-7 py-3 rounded-full border border-cyan-blue;
-}
-
-.nav__container {
-  @apply lg:w-[85%] h-full mx-auto relative;
-}
-
-.nav__overlay {
-  @apply lg:hidden;
-  position: absolute;
-  inset: 0;
-  z-index: 10;
-  overflow-y: scroll;
-  
-  background-color: var(--black-opacity);
-  backdrop-filter: blur(15px);
-}
-
-.nav:has(input:checked) .nav__overlay {
-  display: block;
-}
-
-
-
-@media (width < 1000px) {
-  
-
-  
-
-  
-
-  .nav__toggle-cta:has(.fa-xmark) {
-    position: absolute;
-    top: 40px;
-    right: 0;
+  .nav {
+    @apply select-none;
   }
 
-  .nav__links {
-    display: grid;
-    height: 100%;
-    place-content: center;
-    text-align: center;
+  .nav__icon {
+    @apply lg:hidden grid w-[40px] h-[40px] text-[28px] place-items-center border border-transparent rounded hover:border-cyan-blue;
   }
 
-}
+  .nav__link {
+    @apply text-lg hover:text-cyan-blue;
+  }
 
+  .nav__link--cta {
+    @apply block px-5 py-3 rounded-full border;
+  }
+
+  .nav:has(input:checked) .nav__overlay {
+    @apply block;
+  }
+
+  @media (width < 1024px) {
+    .nav__overlay {
+      @apply hidden fixed inset-0 overflow-auto bg-black-opacity backdrop-blur-lg;
+      scrollbar-gutter: stable;
+    }
+
+    .nav__icon:has(.fa-xmark) {
+      @apply absolute top-10 right-0;
+    }
+  }
 </style>
