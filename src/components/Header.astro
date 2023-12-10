@@ -1,0 +1,34 @@
+---
+import Logo from "./Logo.astro";
+import Nav from "./Nav.astro";
+---
+
+<header class="cont hero text-white">
+  <section class="flex justify-between">
+    <Logo />
+    <Nav />
+  </section>
+  
+  <section class="grid gap-5">
+    <p class="text-cyan-blue text-xl font-[600]">Es el momento !</p>
+
+    <h1 class="text-[50px] leading-none">
+      <span class="font-[700]">Explora</span>
+      el mundo<span class="text-cyan-blue">.</span>
+    </h1>
+
+    <p class="font-[500] text-3xl leading-[1.3]">
+      Internet por <span class="font-[700]">Fibra Óptica</span>
+    </p>
+  </section>
+</header>
+
+<style>
+  .hero {
+    height: 100vh;
+    padding-top: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+</style>

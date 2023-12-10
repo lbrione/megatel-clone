@@ -3,6 +3,7 @@ import { BASE_URL } from '../services/contans'
 ---
 
 <nav class="nav">
+  
   <input type="checkbox" hidden id="checkbox" />
   <label class="nav__icon" for="checkbox">
     <i class="fa-solid fa-bars"></i>
@@ -10,6 +11,7 @@ import { BASE_URL } from '../services/contans'
 
   <div class="nav__overlay">
     <div class="mx-auto w-[85%] relative lg:mx-0 lg:w-full">
+
       <label class="nav__icon" for="checkbox">
         <i class="fa-solid fa-xmark"></i>
       </label>
@@ -53,7 +55,7 @@ import { BASE_URL } from '../services/contans'
   }
 
   .nav__link--cta {
-    @apply block px-5 py-3 rounded-full border;
+    @apply block px-5 py-2 rounded-full border;
   }
 
   .nav:has(input:checked) .nav__overlay {

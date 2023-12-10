@@ -1,18 +1,13 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Logo from '../components/Logo.astro';
-import Nav from '../components/Nav.astro';
+import Header from '../components/Header.astro';
 ---
 
 <Layout title="Megatel | Internet por Fibra Óptica.">
   <div class="bg-image"></div>
 
-  <header class="cont hero text-white">
-    <section class="flex justify-between">
-      <Logo />
-      <Nav />
-    </section>
-  </header>
+  <Header />
+
 
 </Layout>
 
@@ -29,13 +24,5 @@ import Nav from '../components/Nav.astro';
     background-color: var(--black-opacity);
     background-position: center;
     background-size: cover;
-  }
-
-  .hero {
-    height: 100vh;
-    padding-top: 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
   }
 </style>
